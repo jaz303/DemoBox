@@ -1,0 +1,25 @@
+Behaviours left to implement:
+
+  - obstacle avoidance
+  
+Other stuff:
+
+  - understand the dot product
+  - build a basis of a entity/component framework
+    - construct gameobjects from factories
+    - register gameobjects with relevant subsystems
+    - ability to add gameobjects to word
+    
+Entity component:
+  - an object that can be positioned in the game world
+  - can be moveable or immoveable
+  
+  - every entity has:
+    - position
+    - mass
+    - facing (angle)
+    - velocity (vector)
+    - max force
+    - max speed
+    
+  facing needs to be separate from velocity!!!

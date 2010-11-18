@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+name = ARGV[0] || ''
+
+if name.length == 0
+  puts "usage: create project_name"
+  exit 1
+end
+
+if File.directory?(name)
+  puts "project '#{name}' already exists"
+  exit 1
+end
+
+`cp -R Template #{name}`
+`mv #{name}/src/Template-config.xml #{name}/src/#{name}-config.xml`
+
+source_file = File.read("#{name}/src/Template.as")
+source_file.gsub!('Template', name)
+File.open("#{name}/src/#{name}.as", "w") { |f| f.write(source_file) }
+`rm #{name}/src/Template.as`
+
+project_file = File.read("#{name}/Template.tmproj")
+project_file.gsub!('Template', name);
+File.open("#{name}/#{name}.tmproj", "w") { |f| f.write(project_file) }
+`rm #{name}/Template.tmproj`
