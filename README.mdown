@@ -1,0 +1,14 @@
+DemoBox
+=======
+
+Requirements
+------------
+
+You should have a working Flash/TextMate environment setup.
+
+Creating a new project
+----------------------
+
+    ./create MyProject
+
+This will create a new folder containing a skeleton class file (`MyProject.as`), links to the common libraries/components, and a TextMate project file (`MyProject.tmproj`).
